@@ -1,34 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Footer from '../components/footer.astro';
+import Header from '../components/Header.astro';
+import './styles/global.css';
 
 const pageTitle = "About Me";
+
 const identity = {
-    firstName:"sebastian",
-    country:"colombia",
-    occupation:"web developer",
-    hobbies:["aprendiendo en público", "astro", "blogging"]
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
 };
 
-const skills = [
-    "Astro",
-    "Markdown",
-    "CSS",
-    "JavaScript",
-    "HTML",
-    "Git",
-    "PowerShell",
-    "VSCode",
-    "Windows Terminal",
-    "Visual Studio Code",
-];
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
 const finished = false;
 const goal = 3;
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 
@@ -37,11 +29,22 @@ const goal = 3;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .skill {
+             color: var(--skillColor);
+             font-weight: var(--fontWeight);
+             text-transform: var(--textCase);
+        }
+      </style>
+  </head>
   </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Header/>
 
     <h1>{pageTitle}</h1>
     <h2>... Y Mi Nuevo Astro site!</h2>
@@ -59,15 +62,19 @@ const goal = 3;
     {goal === 3 ? <p>Mi objetivo es termianar en 3 dais.</p> : <p>Mi meta no son 3 días</p>}
 
 <ul>
-  <li>Mi nombre es {identity.firstName}.</li>
-  <li>yo vivo en {identity.country} ay yo trabajo como {identity.occupation}.</li>
+  <li class="skill">Mi nombre es {identity.firstName}.</li>
+  <li class="skill">yo vivo en {identity.country} ay yo trabajo como {identity.occupation}.</li>
   {identity.hobbies.length >= 2 &&
-    <li>Dos de mis pasatiempos son: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+    <li class="skill">Dos de mis pasatiempos son: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
   }
 </ul>
 <p>Mis habilidades son:</p>
 <ul>
-  {skills.map((skill) => <li>{skill}</li>)}
+  {skills.map((skill) => <li class="skill">{skill}</li>)}
 </ul>
+<Footer />
+<script>
+    import "../scripts/menu.js";
+</script>
   </body>
 </html>

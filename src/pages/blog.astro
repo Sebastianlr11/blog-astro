@@ -1,4 +1,8 @@
 ---
+import Footer from '../components/footer.astro';
+import Header from '../components/Header.astro';
+import './styles/global.css';
+
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
@@ -7,8 +11,7 @@ const pageTitle = "Blog";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
----
----
+
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
@@ -16,9 +19,8 @@ const pageTitle = "Blog";
     <title>{pageTitle}</title>
   </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Header/>
+    
   
     <h1>{pageTitle}</h1>
     <h1>Mi blog de aprendizaje astro</h1>
@@ -28,4 +30,8 @@ const pageTitle = "Blog";
         <li><a href="/posts/post-2">Post 2</a></li>
         <li><a href="/posts/post-3">Post 3</a></li>
     </ul>
+    <Footer />
+    <script>
+		import "../scripts/menu.js";
+	</script>
   </body>
