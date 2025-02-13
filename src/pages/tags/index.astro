@@ -1,5 +1,8 @@
 ---
+import PreactBanner from '../../components/PreactBanner.jsx';
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Greeting from '../../components/Saludo.jsx';
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 const pageTitle = "Tag Index";
@@ -9,8 +12,20 @@ const pageTitle = "Tag Index";
       {tags.map((tag) => (
         <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
       ))}
+   
     </div>
+   
+    <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
   </BaseLayout>
+
+  <h1>Probando Islas Hidratadas en Astro</h1>
+
+<!-- Preact sin JavaScript -->
+<PreactBanner/>
+
+<!-- Preact con JavaScript cargado al inicio -->
+<PreactBanner client:load />
+
 
   <style>
     a {
