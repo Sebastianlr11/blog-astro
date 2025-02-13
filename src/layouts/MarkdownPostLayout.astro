@@ -1,0 +1,25 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+
+// Formatear la fecha de manera segura
+const formattedDate = frontmatter.pubDate instanceof Date 
+  ? frontmatter.pubDate.toISOString().slice(0,10)
+  : new Date(frontmatter.pubDate).toISOString().slice(0,10);
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <article class="blog-post">
+    <p class="publish-date">{formattedDate}</p>
+    <p class="description"><em>{frontmatter.description}</em></p>
+    <p class="author">Written by: {frontmatter.author}</p>
+    {frontmatter.image && (
+      <img 
+        src={frontmatter.image.url} 
+        width="300" 
+        alt={frontmatter.image.alt || `Image for ${frontmatter.title}`} 
+      />
+    )}
+    <slot />
+  </article>
+</BaseLayout>

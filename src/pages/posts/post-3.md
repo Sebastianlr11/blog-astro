@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi Tercer Post en el Blog
 author: Aprendiz de Astro
 description: "Tuve algunos desafíos, pero preguntar en la comunidad realmente ayudó."

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mi Segundo Post en el Blog
 author: Aprendiz de Astro
 description: "Después de aprender un poco de Astro, ¡no pude parar!"

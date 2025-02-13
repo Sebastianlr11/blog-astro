@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Mi Primer Post en el Blog'
 pubDate: 2022-07-01
 description: 'Este es el primer post de mi nuevo blog en Astro.'
@@ -13,16 +14,16 @@ tags: ["astro", "blogging", "aprendiendo en público"]
 
 Publicado el: 2022-07-01
 
-¡Bienvenido a mi _nuevo blog_ sobre aprender Astro! Aquí compartiré mi viaje de aprendizaje mientras construyo un nuevo sitio web.
+Bienvenido a mi _nuevo blog_ sobre aprender Astro! Aqui compartire mi viaje de aprendizaje mientras construyo un nuevo sitio web.
 
 ## Lo que he logrado
 
-1. **Instalar Astro**: Primero, creé un nuevo proyecto en Astro y configuré mis cuentas en línea.
+1. **Instalar Astro**: Primero, cree un nuevo proyecto en Astro y configure mis cuentas en línea.
 
-2. **Crear Páginas**: Luego, aprendí a hacer páginas creando nuevos archivos `.astro` y colocándolos en la carpeta `src/pages/`.
+2. **Crear Paginas**: Luego, aprendi a hacer paginas creando nuevos archivos `.astro` y colocandolos en la carpeta `src/pages/`.
 
-3. **Crear Posts en el Blog**: ¡Este es mi primer post en el blog! Ahora tengo páginas en Astro y publicaciones en Markdown.
+3. **Crear Posts en el Blog**: Este es mi primer post en el blog! Ahora tengo paginas en Astro y publicaciones en Markdown.
 
 ## Lo que sigue
 
-Voy a terminar el tutorial de Astro y seguiré agregando más publicaciones. ¡Estate atento a más contenido próximamente!
+Voy a terminar el tutorial de Astro y seguire agregando mas publicaciones. Estate atento a mas contenido proximamente!
