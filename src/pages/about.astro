@@ -2,18 +2,72 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
+const pageTitle = "About Me";
+const identity = {
+    firstName:"sebastian",
+    country:"colombia",
+    occupation:"web developer",
+    hobbies:["aprendiendo en público", "astro", "blogging"]
+};
+
+const skills = [
+    "Astro",
+    "Markdown",
+    "CSS",
+    "JavaScript",
+    "HTML",
+    "Git",
+    "PowerShell",
+    "VSCode",
+    "Windows Terminal",
+    "Visual Studio Code",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
 <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 
-    <h1>Sobre Mi</h1>
+    <h1>{pageTitle}</h1>
     <h2>... Y Mi Nuevo Astro site!</h2>
   
     <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda pagina de mi sitio web y es la primera que cree yo mismo.</p>
   
     <p>Este sitio se actualizara a medida que complete mas partes del tutorial, asi que siga visitandolo y vea como va mi viaje!</p>
+
+    <p>Aqui hay algunos datos sobre mí:</p>
+
+    {happy && <p>Estoy feliz de estar aprendiendo Astro!</p>}
+
+    {finished && <p>¡Terminé este tutorial!</p>}
+
+    {goal === 3 ? <p>Mi objetivo es termianar en 3 dais.</p> : <p>Mi meta no son 3 días</p>}
+
+<ul>
+  <li>Mi nombre es {identity.firstName}.</li>
+  <li>yo vivo en {identity.country} ay yo trabajo como {identity.occupation}.</li>
+  {identity.hobbies.length >= 2 &&
+    <li>Dos de mis pasatiempos son: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  }
+</ul>
+<p>Mis habilidades son:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>
   </body>
+</html>
